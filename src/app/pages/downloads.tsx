@@ -34,6 +34,7 @@ export function DownloadsPage() {
   const freeDownloads = [
     {
       title: language === 'en' ? 'AI Business Starter Guide' : 'Guía de Inicio de Negocio IA',
+      subtitleEs: 'Guía de Inicio de Negocio IA',
       description: language === 'en'
         ? 'Essential guide to implementing AI in your business. Learn the basics and get started today.'
         : 'Guía esencial para implementar IA en tu negocio. Aprende lo básico y comienza hoy.',
@@ -44,6 +45,7 @@ export function DownloadsPage() {
     },
     {
       title: language === 'en' ? 'Automation Checklist' : 'Lista de Verificación de Automatización',
+      subtitleEs: 'Lista de Verificación de Automatización',
       description: language === 'en'
         ? 'Step-by-step checklist for automating your business processes effectively.'
         : 'Lista de verificación paso a paso para automatizar tus procesos de negocio efectivamente.',
@@ -54,6 +56,7 @@ export function DownloadsPage() {
     },
     {
       title: language === 'en' ? 'AI Agents Overview' : 'Resumen de Agentes IA',
+      subtitleEs: 'Resumen de Agentes IA',
       description: language === 'en'
         ? 'Comprehensive overview of AI agents and how they can transform your operations.'
         : 'Resumen completo de agentes IA y cómo pueden transformar tus operaciones.',
@@ -67,6 +70,7 @@ export function DownloadsPage() {
   const premiumBooks = [
     {
       title: language === 'en' ? 'Complete AI Implementation Blueprint' : 'Plan Completo de Implementación IA',
+      subtitleEs: 'Plan Completo de Implementación IA',
       description: language === 'en'
         ? 'Master guide with templates, case studies, and implementation strategies for enterprise AI.'
         : 'Guía maestra con plantillas, casos de estudio y estrategias de implementación para IA empresarial.',
@@ -80,6 +84,7 @@ export function DownloadsPage() {
     },
     {
       title: language === 'en' ? 'AI Business Scaling Playbook' : 'Manual de Escalamiento de Negocio IA',
+      subtitleEs: 'Manual de Escalamiento de Negocio IA',
       description: language === 'en'
         ? 'Proven strategies and frameworks for scaling your business with AI automation.'
         : 'Estrategias y marcos probados para escalar tu negocio con automatización IA.',
@@ -93,6 +98,7 @@ export function DownloadsPage() {
     },
     {
       title: language === 'en' ? 'Customer Service AI Revolution' : 'Revolución IA en Servicio al Cliente',
+      subtitleEs: 'Revolución IA en Servicio al Cliente',
       description: language === 'en'
         ? 'Transform your customer service with AI. Includes workflows, scripts, and integration guides.'
         : 'Transforma tu servicio al cliente con IA. Incluye flujos de trabajo, scripts y guías de integración.',
@@ -200,9 +206,15 @@ export function DownloadsPage() {
 
                     {/* Content */}
                     <div className="p-6">
-                      <h3 className="text-xl mb-3 text-white font-light group-hover:text-blue-400 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                      <h3 className="text-xl mb-1 text-white font-light group-hover:text-blue-400 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                         {item.title}
                       </h3>
+                      {/* Spanish Subtitle */}
+                      {language === 'en' && (
+                        <p className="text-sm mb-3 text-blue-300/70 font-light italic" style={{ fontFamily: 'Inter, sans-serif' }}>
+                          {item.subtitleEs}
+                        </p>
+                      )}
                       <p className="text-gray-400 text-sm mb-4 font-light" style={{ fontFamily: 'Inter, sans-serif' }}>
                         {item.description}
                       </p>
@@ -269,9 +281,15 @@ export function DownloadsPage() {
 
                     {/* Content */}
                     <div className="p-6">
-                      <h3 className="text-xl mb-3 text-white font-light group-hover:text-yellow-400 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                      <h3 className="text-xl mb-1 text-white font-light group-hover:text-yellow-400 transition-colors" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                         {item.title}
                       </h3>
+                      {/* Spanish Subtitle */}
+                      {language === 'en' && (
+                        <p className="text-sm mb-3 text-yellow-300/70 font-light italic" style={{ fontFamily: 'Inter, sans-serif' }}>
+                          {item.subtitleEs}
+                        </p>
+                      )}
                       <p className="text-gray-400 text-sm mb-4 font-light" style={{ fontFamily: 'Inter, sans-serif' }}>
                         {item.description}
                       </p>
