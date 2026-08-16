@@ -1,11 +1,11 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { Mail, MapPin, Phone, Instagram, Linkedin, Twitter, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
-import { Link } from 'react-router';
-import logo from "figma:asset/4e375985cfc5461eefdfde961d7f567e9c84118d.png";
+import Link from 'next/link';
+import logo from '@/assets/4e375985cfc5461eefdfde961d7f567e9c84118d.png';
 
 export function Footer() {
   const ref = useRef(null);
@@ -49,33 +49,6 @@ export function Footer() {
     }
   };
 
-  // Chat widget temporarily disabled to debug regex error
-  // useEffect(() => {
-  //   // Delay chat widget loading to avoid conflicts
-  //   const timeoutId = setTimeout(() => {
-  //     try {
-  //       const script = document.createElement('script');
-  //       script.src = 'https://beta.leadconnectorhq.com/loader.js';
-  //       script.setAttribute('data-resources-url', 'https://beta.leadconnectorhq.com/chat-widget/loader.js');
-  //       script.setAttribute('data-widget-id', '6931959121b060905eb0608c');
-  //       script.async = true;
-  //       script.defer = true;
-
-  //       script.onerror = (error) => {
-  //         console.error('Chat widget script failed to load:', error);
-  //       };
-
-  //       document.body.appendChild(script);
-  //     } catch (error) {
-  //       console.error('Error loading chat widget:', error);
-  //     }
-  //   }, 1000);
-
-  //   return () => {
-  //     clearTimeout(timeoutId);
-  //   };
-  // }, []);
-
   return (
     <footer ref={ref} className="relative pt-24 pb-12 bg-black overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -109,7 +82,7 @@ export function Footer() {
                 {group.items.map((item, j) => (
                   <li key={j}>
                     {item.href.startsWith('/') && !item.href.startsWith('/#') ? (
-                      <Link to={item.href} className="text-gray-400 hover:text-white transition-colors text-sm font-light">
+                      <Link href={item.href} className="text-gray-400 hover:text-white transition-colors text-sm font-light">
                         {item.label}
                       </Link>
                     ) : (
