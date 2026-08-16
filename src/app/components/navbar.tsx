@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
-import { useNavigate, useLocation, Link } from 'react-router';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
-import logo from "figma:asset/4e375985cfc5461eefdfde961d7f567e9c84118d.png";
+import logo from '@/assets/4e375985cfc5461eefdfde961d7f567e9c84118d.png';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, setLanguage } = useLanguage();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
   
   const t = translations[language].nav;
 
@@ -36,14 +36,11 @@ export function Navbar() {
     e.preventDefault();
     setIsMobileMenuOpen(false);
     
-    // If it's a hash link
     if (href.startsWith('/#')) {
       const id = href.substring(2);
       
-      // If we're not on home page, navigate there first
-      if (location.pathname !== '/') {
-        navigate('/');
-        // Wait for navigation then scroll
+      if (router.pathname !== '/') {
+        router.push('/');
         setTimeout(() => {
           const element = document.getElementById(id);
           if (element) {
@@ -51,22 +48,20 @@ export function Navbar() {
           }
         }, 100);
       } else {
-        // Already on home page, just scroll
         const element = document.getElementById(id);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }
     } else {
-      // Regular page navigation
-      navigate(href);
+      router.push(href);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    navigate('/');
+    router.push('/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -81,7 +76,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group" onClick={handleLogoClick}>
+          <a href="/" className="flex items-center gap-2 group" onClick={handleLogoClick}>
             <img 
               src={logo} 
               alt="NetReachGo Logo" 
@@ -137,7 +132,7 @@ export function Navbar() {
             </div>
 
             <Link 
-              to="/discovery"
+              href="/discovery"
               className="group px-6 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all hover:scale-105 active:scale-95"
             >
               <span className="text-white group-hover:text-yellow-400 transition-colors font-medium" style={{ fontFamily: 'Orbitron, sans-serif' }}>{t.getStarted}</span>
@@ -200,7 +195,7 @@ export function Navbar() {
               ))}
 
               <Link 
-                to="/discovery"
+                href="/discovery"
                 className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold text-center"
               >
                 {t.getStarted}
