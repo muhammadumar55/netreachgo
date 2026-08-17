@@ -5,7 +5,7 @@ import { GraduationCap, BookOpen, Award, Users, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 import { MatrixText } from '@/app/components/matrix-text';
-import { Link } from 'react-router';
+import Link from 'next/link';
 
 const programIcons = [BookOpen, Sparkles, Award];
 
@@ -94,7 +94,7 @@ export function AcademySection() {
           transition={{ duration: 0.4, delay: 0.3 }}
           className="mt-16 text-center"
         >
-          <Link to="/discovery" className="group inline-flex px-8 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]">
+          <Link href="/discovery" className="group inline-flex px-8 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]">
             <span className="text-white flex items-center gap-2" style={{ fontFamily: 'Orbitron, sans-serif' }}>{t.cta}<GraduationCap className="w-5 h-5 group-hover:rotate-12 transition-transform" /></span>
           </Link>
         </motion.div>
