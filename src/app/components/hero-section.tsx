@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { Sparkles, ArrowRight, Bot, Headphones } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
-import { Link } from 'react-router';
+import Link from 'next/link';
 import { MatrixRain } from '@/app/components/matrix-rain';
 
 export function HeroSection() {
@@ -91,7 +91,7 @@ export function HeroSection() {
           transition={{ duration: 0.3, delay: 0.2 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <Link to="/discovery" className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] active:scale-95">
+          <Link href="/discovery" className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] active:scale-95">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity blur-xl" />
             <div className="relative flex items-center gap-2 text-white">
               <Bot className="w-5 h-5" />
@@ -100,13 +100,13 @@ export function HeroSection() {
             </div>
           </Link>
 
-          <Link to="/discovery" className="group px-8 py-4 rounded-lg border-2 border-blue-500/30 bg-blue-500/5 backdrop-blur-sm transition-all hover:border-blue-500/60 hover:bg-blue-500/10 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] active:scale-95">
+          <Link href="/discovery" className="group px-8 py-4 rounded-lg border-2 border-blue-500/30 bg-blue-500/5 backdrop-blur-sm transition-all hover:border-blue-500/60 hover:bg-blue-500/10 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] active:scale-95">
             <span className="text-blue-300 group-hover:text-blue-200 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
               {t.ctaSecondary}
             </span>
           </Link>
 
-          <Link to="/support" className="group px-8 py-4 rounded-lg border-2 border-purple-500/30 bg-purple-500/5 backdrop-blur-sm transition-all hover:border-purple-500/60 hover:bg-purple-500/10 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] active:scale-95">
+          <Link href="/support" className="group px-8 py-4 rounded-lg border-2 border-purple-500/30 bg-purple-500/5 backdrop-blur-sm transition-all hover:border-purple-500/60 hover:bg-purple-500/10 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] active:scale-95">
             <div className="flex items-center gap-2">
               <Headphones className="w-5 h-5 text-purple-300 group-hover:text-purple-200 transition-colors" />
               <span className="text-purple-300 group-hover:text-purple-200 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
