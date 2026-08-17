@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
 // EDIT THIS: Change the image import below to use a different image
-import brainImage from 'figma:asset/91e53ce50c283481300f6f6b0d478cbf343c913c.png';
+import brainImage from '@/assets/91e53ce50c283481300f6f6b0d478cbf343c913c.png';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 
