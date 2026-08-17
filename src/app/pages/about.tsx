@@ -5,7 +5,7 @@ import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 import { Sparkles, Target, Eye, Zap, Users, TrendingUp, Award, Rocket } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import aiHologramImage from '@/assets/3bd36d9e38a01a66a3e8145d8e2eb6f23bb3fb2c.png';
+const aiHologramImage = 'https://images.unsplash.com/photo-1620712943546-b965eee1c337?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhaSUyMGhvbG9ncmFtfGVud3wxfHx8fDE3NzY2NTg1NjF8MA&ixlib=rb-4.1.0&q=80&w=1080';
 import Link from 'next/link';
 
 const aiWomanImage = 'https://images.unsplash.com/photo-1699062139074-f7b6f776c4de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwd29tYW4lMjBhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NzY2NTg1NjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral';
