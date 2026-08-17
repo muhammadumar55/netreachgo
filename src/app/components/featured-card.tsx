@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import agentsImage from 'figma:asset/ce803c89d8302eea77edf27ccf4b7585026595d1.png';
+import agentsImage from '@/assets/ce803c89d8302eea77edf27ccf4b7585026595d1.png';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 
