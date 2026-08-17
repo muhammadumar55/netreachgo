@@ -5,8 +5,8 @@ import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 import { Sparkles, Target, Eye, Zap, Users, TrendingUp, Award, Rocket } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import aiHologramImage from 'figma:asset/3bd36d9e38a01a66a3e8145d8e2eb6f23bb3fb2c.png';
-import { Link } from 'react-router';
+import aiHologramImage from '@/assets/3bd36d9e38a01a66a3e8145d8e2eb6f23bb3fb2c.png';
+import Link from 'next/link';
 
 const aiWomanImage = 'https://images.unsplash.com/photo-1699062139074-f7b6f776c4de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwd29tYW4lMjBhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NzY2NTg1NjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral';
 
@@ -368,7 +368,7 @@ export function AboutPage() {
             
             <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12" style={{ fontFamily: 'Inter, sans-serif' }}>
               {t.teamText}{' '}
-              <Link to="/team" className="text-blue-400 hover:text-blue-300 underline transition-colors">
+              <Link href="/team" className="text-blue-400 hover:text-blue-300 underline transition-colors">
                 Meet our team
               </Link>
             </p>
@@ -430,7 +430,7 @@ export function AboutPage() {
                 {t.ctaSubtitle}
               </p>
               
-              <Link to="/discovery">
+              <Link href="/discovery">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
