@@ -9,9 +9,13 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="Impact-Site-Verification" content="ccc796a3-8d24-4a1b-a6d0-3bd6b00902af" />
         <link rel="canonical" href="https://www.netreachgo.com" />
-        <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6931959121b060905eb0608c" />
       </Head>
       <Component {...pageProps} />
     </LanguageProvider>
   )
+}
+
+// Disable static optimization — pages need client-side rendering for now
+App.getInitialProps = async () => {
+  return {}
 }
