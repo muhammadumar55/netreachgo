@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { Navbar } from '@/app/components/navbar';
 import { Footer } from '@/app/components/footer';
 
-export function Layout() {
+export function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
   // Scroll to top on route change
