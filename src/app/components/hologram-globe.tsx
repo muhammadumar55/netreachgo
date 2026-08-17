@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
-import globeImg from "figma:asset/c70d7771f83836211341ccfba2b1d205b9d19b07.png";
+import globeImg from '@/assets/c70d7771f83836211341ccfba2b1d205b9d19b07.png';
 
 export function HologramGlobe() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
