@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
-import { Outlet, useLocation } from 'react-router';
+import { useRouter } from 'next/router';
 import { Navbar } from '@/app/components/navbar';
 import { Footer } from '@/app/components/footer';
 
 export function Layout() {
-  const location = useLocation();
+  const router = useRouter();
 
   // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [router.pathname]);
 
   return (
     <div className="min-h-screen bg-[#020205] text-white overflow-x-hidden">
       <Navbar />
-      <Outlet />
+      {children}
       <Footer />
     </div>
   );
