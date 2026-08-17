@@ -5,7 +5,7 @@ import { Globe, Zap, ShieldCheck, Layers } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 import { MatrixText } from '@/app/components/matrix-text';
-import { Link } from 'react-router';
+import Link from 'next/link';
 
 export function WebsitesSection() {
   const ref = useRef(null);
@@ -103,7 +103,7 @@ export function WebsitesSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex justify-center mb-16"
         >
-          <Link to="/discovery" className="group px-8 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all hover:scale-105 active:scale-95">
+          <Link href="/discovery" className="group px-8 py-4 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] transition-all hover:scale-105 active:scale-95">
             <span className="text-white group-hover:text-yellow-400 transition-colors font-medium text-lg" style={{ fontFamily: 'Orbitron, sans-serif' }}>{t.getStarted || (language === 'en' ? 'Get Started' : 'Comenzar')}</span>
           </Link>
         </motion.div>
