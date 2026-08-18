@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { Headphones, Video, Mail, Globe, Phone, CheckCircle2, Send } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
-import { projectId, publicAnonKey } from '@/utils/supabase/info';
+import { projectId, publicAnonKey } from '../../../utils/supabase/info';
 
 interface SupportFormData {
   fullName: string;
