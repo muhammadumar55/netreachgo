@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[221],{2859:(t,n,e)=>{"use strict";function _(){return"User-agent: *\nAllow: /\n\nSitemap: https://www.netreachgo.com/sitemap.xml"}e.r(n),e.d(n,{default:()=>_})},9548:(t,n,e)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/robots.txt",function(){return e(2859)}])}},t=>{t.O(0,[636,593,792],()=>t(t.s=9548)),_N_E=t.O()}]);
