@@ -81,7 +81,6 @@ export default function Document() {
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
           data-widget-id="6ac527c9b2f4cb18711241cf"
-          data-source="WEB_USER"
         />
       </body>
     </Html>
