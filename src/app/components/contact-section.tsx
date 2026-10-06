@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 import { projectId, publicAnonKey } from '/utils/supabase/info';
+import { ConsentCheckboxes, ConsentState } from './consent-checkboxes';
 
 export function ContactSection() {
   const ref = useRef(null);
@@ -34,6 +35,8 @@ export function ContactSection() {
     message: '',
   });
 
+  const [consent, setConsent] = useState<ConsentState>({ informational: false, promotional: false });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -51,7 +54,7 @@ export function ContactSection() {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${publicAnonKey}`,
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({ ...formData, consent }),
         }
       );
 
@@ -161,6 +164,8 @@ export function ContactSection() {
                   required
                 />
               </div>
+
+              <ConsentCheckboxes consent={consent} onChange={setConsent} />
 
               <button
                 type="submit"

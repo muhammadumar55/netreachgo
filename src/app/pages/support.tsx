@@ -4,6 +4,7 @@ import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { Headphones, Video, Mail, Globe, Phone, CheckCircle2, Send } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
+import { ConsentCheckboxes, ConsentState } from '@/app/components/consent-checkboxes';
 import { translations } from '@/app/translations';
 import { projectId, publicAnonKey } from '/utils/supabase/info';
 
@@ -23,6 +24,8 @@ export function SupportPage() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const { language } = useLanguage();
   const t = translations[language].support;
+
+  const [consent, setConsent] = useState<ConsentState>({ informational: false, promotional: false });
 
   const [formData, setFormData] = useState<SupportFormData>({
     fullName: '',
@@ -71,7 +74,7 @@ export function SupportPage() {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${publicAnonKey}`,
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({ ...formData, consent }),
         }
       );
 
@@ -421,6 +424,8 @@ export function SupportPage() {
                     {t.loomUrlHelp}
                   </p>
                 </div>
+
+                <ConsentCheckboxes consent={consent} onChange={setConsent} />
 
                 {submitError && (
                   <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
