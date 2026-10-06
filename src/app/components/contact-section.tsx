@@ -4,7 +4,6 @@ import { useRef, useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
 import { ConsentCheckboxes, ConsentState } from './consent-checkboxes';
 
 export function ContactSection() {
@@ -47,14 +46,11 @@ export function ContactSection() {
 
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-659f52ae/contact`,
+        "https://lyra-4f1aacaf.base44.app/functions/nrgWebsiteForm",
         {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`,
-          },
-          body: JSON.stringify({ ...formData, consent }),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...formData, form_type: 'contact', consent }),
         }
       );
 
