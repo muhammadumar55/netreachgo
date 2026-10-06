@@ -6,7 +6,7 @@ import { Headphones, Video, Mail, Globe, Phone, CheckCircle2, Send } from 'lucid
 import { useLanguage } from '@/app/context/language-context';
 import { ConsentCheckboxes, ConsentState } from '../components/consent-checkboxes';
 import { translations } from '@/app/translations';
-import { projectId, publicAnonKey } from '../../../utils/supabase/info';
+
 
 interface SupportFormData {
   fullName: string;
@@ -67,14 +67,11 @@ export function SupportPage() {
 
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-659f52ae/support`,
+        "https://lyra-4f1aacaf.base44.app/functions/nrgWebsiteForm",
         {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`,
-          },
-          body: JSON.stringify({ ...formData, consent }),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...formData, form_type: 'support', consent }),
         }
       );
 
