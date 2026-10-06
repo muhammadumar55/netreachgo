@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight, ChevronLeft, Rocket, Building2, Target, Zap, CheckCircle2, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
+import { ConsentCheckboxes, ConsentState } from '../components/consent-checkboxes';
 import { translations } from '@/app/translations';
 import { projectId, publicAnonKey } from '../../../utils/supabase/info';
 
@@ -21,6 +22,7 @@ interface FormData {
 export function DiscoveryPage() {
   const { language } = useLanguage();
   const t = translations[language].discovery;
+  const [consent, setConsent] = useState<ConsentState>({ informational: false, promotional: false });
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -80,7 +82,7 @@ export function DiscoveryPage() {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${publicAnonKey}`,
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({ ...formData, consent }),
         }
       );
 
@@ -500,6 +502,8 @@ export function DiscoveryPage() {
                         {t.privacyNote}
                       </p>
                     </div>
+
+                    <ConsentCheckboxes consent={consent} onChange={setConsent} />
                   </div>
                 )}
               </motion.div>
