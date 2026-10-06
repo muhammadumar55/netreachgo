@@ -4,7 +4,6 @@ import { useRef, useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
-
 import { ConsentCheckboxes, ConsentState } from './consent-checkboxes';
 
 export function ContactSection() {

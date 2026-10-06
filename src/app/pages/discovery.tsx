@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight, ChevronLeft, Rocket, Building2, Target, Zap, CheckCircle2, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
-import { ConsentCheckboxes, ConsentState } from '../components/consent-checkboxes';
+import { ConsentCheckboxes, ConsentState } from '@/app/components/consent-checkboxes';
 import { translations } from '@/app/translations';
-
 
 interface FormData {
   businessName: string;

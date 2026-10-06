@@ -4,9 +4,8 @@ import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { Headphones, Video, Mail, Globe, Phone, CheckCircle2, Send } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
-import { ConsentCheckboxes, ConsentState } from '../components/consent-checkboxes';
+import { ConsentCheckboxes, ConsentState } from '@/app/components/consent-checkboxes';
 import { translations } from '@/app/translations';
-
 
 interface SupportFormData {
   fullName: string;

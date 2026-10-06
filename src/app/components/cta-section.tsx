@@ -5,7 +5,7 @@ import { Rocket, ArrowRight, Calendar } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 import { MatrixText } from '@/app/components/matrix-text';
-import Link from 'next/link';
+import { Link } from 'react-router';
 
 export function CTASection() {
   const ref = useRef(null);
