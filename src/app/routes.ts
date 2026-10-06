@@ -7,6 +7,7 @@ import { DiscoveryPage } from '@/app/pages/discovery';
 import { TeamPage } from '@/app/pages/team';
 import { SupportPage } from '@/app/pages/support';
 import { DownloadsPage } from '@/app/pages/downloads';
+import { SmsChatPage } from '@/app/pages/sms-chat';
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
       {
         path: 'downloads',
         Component: DownloadsPage,
+      },
+      {
+        path: 'sms-chat',
+        Component: SmsChatPage,
       },
     ],
   },
