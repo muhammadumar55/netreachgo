@@ -25,7 +25,7 @@ export const translations = {
       badge: 'PRIMARY FOCUS',
       title: 'Autonomous',
       titleHighlight: 'A.I. Agents',
-      subtitle: 'Deploy intelligent agents that work as your digital workforce — learning, adapting, and scaling with your business needs',
+      subtitle: 'These are just a few of the agents we build — we design custom agents for any business, any position, and any workflow you can imagine',
       salesAgent: {
         title: 'Sales Agent',
         description: 'Autonomous lead qualification and outreach, 24/7 engagement',
@@ -634,7 +634,7 @@ export const translations = {
       badge: 'ENFOQUE PRINCIPAL',
       title: 'Agentes de',
       titleHighlight: 'I.A. Autónomos',
-      subtitle: 'Despliega agentes inteligentes que trabajan como tu fuerza laboral digital — aprendiendo, adaptándose y escalando con las necesidades de tu negocio',
+      subtitle: 'Estos son solo algunos de los agentes que construimos — diseñamos agentes personalizados para cualquier negocio, cualquier posición y cualquier flujo de trabajo que imagines',
       salesAgent: {
         title: 'Agente de Ventas',
         description: 'Calificación y alcance de leads autónomo, compromiso 24/7',

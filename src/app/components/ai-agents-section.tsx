@@ -150,6 +150,40 @@ export function AIAgentsSection() {
             </motion.button>
           ))}
         </div>
+
+        {/* Any-agent panel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="relative mt-14 rounded-2xl border border-yellow-500/25 bg-gradient-to-r from-blue-500/10 via-transparent to-yellow-500/10 backdrop-blur-sm overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(251,191,36,0.12),transparent_60%)] pointer-events-none" />
+          <div className="relative px-8 py-10 md:px-12 md:py-12 flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+            <div className="flex-1">
+              <h3 className="text-2xl md:text-3xl mb-3 text-white font-light" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                <span className="text-white">{language === 'en' ? 'Any Business.' : 'Cualquier Negocio.'}</span>{' '}
+                <span className="text-yellow-400" style={{ textShadow: '0 0 30px rgba(251, 191, 36, 0.4)' }}>{language === 'en' ? 'Any Position.' : 'Cualquier Posición.'}</span>{' '}
+                <span className="text-blue-400" style={{ textShadow: '0 0 30px rgba(59, 130, 246, 0.4)' }}>{language === 'en' ? 'Any Agent.' : 'Cualquier Agente.'}</span>
+              </h3>
+              <p className="text-lg text-gray-300 font-light max-w-2xl mx-auto md:mx-0" style={{ fontFamily: 'Inter, sans-serif' }}>
+                {language === 'en'
+                  ? 'The agents above are just examples. If you can describe the job, we can design the agent that does it — trained on your business, your tools, and your rules.'
+                  : 'Los agentes de arriba son solo ejemplos. Si puedes describir el trabajo, podemos diseñar el agente que lo hace — entrenado con tu negocio, tus herramientas y tus reglas.'}
+              </p>
+            </div>
+            <Link
+              to="/discovery"
+              className="group relative shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 rounded-lg text-black font-medium transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(251,191,36,0.5)] active:scale-95"
+            >
+              <Sparkles className="w-5 h-5" />
+              <span style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                {language === 'en' ? 'Design Your Agent' : 'Diseña Tu Agente'}
+              </span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </motion.div>
       </div>
 
       {/* Agent detail modal */}
