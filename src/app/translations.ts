@@ -136,7 +136,7 @@ export const translations = {
 
       },
       aiImplementation: {
-        title: 'AI Implementation Services',
+        title: 'AI Business Implementation Services',
         description: 'Done-for-you AI adoption: we audit your workflows, then build, integrate, and deploy AI agents, automations, and AI-powered tools directly into your operations — with team training included.',
         slug: 'ai-implementation',
         pageSubtitle: 'The hands-on team that turns AI strategy into reality: we build, integrate, and deploy AI agents, automations, and systems directly into your operations.',
@@ -745,7 +745,7 @@ export const translations = {
 
       },
       aiImplementation: {
-        title: 'Implementación de IA',
+        title: 'Implementación de IA para Negocios',
         description: 'Adopción de IA llave en mano: auditamos tus flujos de trabajo y luego construimos, integramos y desplegamos agentes de IA, automatizaciones y herramientas directamente en tus operaciones — con capacitación para tu equipo incluida.',
         slug: 'ai-implementation',
         pageSubtitle: 'El equipo que convierte la estrategia de IA en realidad: construimos, integramos y desplegamos agentes, automatizaciones y sistemas de IA directamente en tus operaciones.',
