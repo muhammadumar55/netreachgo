@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Globe, Code2, Cpu, BarChart3, Rocket, MessageSquare, Zap, ArrowRight, Sparkles, Shield, Terminal, BrainCircuit } from 'lucide-react';
+import { Code2, ArrowRight, Sparkles, Cpu, Globe, Rocket, Zap } from 'lucide-react';
+import { Link } from 'react-router';
+import { serviceOrder } from '@/app/components/services-config';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 import { MatrixText } from '@/app/components/matrix-text';
@@ -12,17 +14,11 @@ export function ServicesPage() {
   const { language } = useLanguage();
   const t = translations[language].services;
 
-  const services = [
-    { icon: Globe, title: t.webDev.title, description: t.webDev.description, color: 'from-blue-500 to-cyan-500' },
-    { icon: Cpu, title: t.aiAgents.title, description: t.aiAgents.description, color: 'from-cyan-500 to-blue-500' },
-    { icon: Zap, title: t.automation.title, description: t.automation.description, color: 'from-blue-600 to-indigo-600' },
-    { icon: BarChart3, title: t.marketing.title, description: t.marketing.description, color: 'from-cyan-400 to-blue-400' },
-    { icon: MessageSquare, title: t.consultancy.title, description: t.consultancy.description, color: 'from-blue-400 to-cyan-400' },
-    { icon: BrainCircuit, title: t.aiImplementation.title, description: t.aiImplementation.description, color: 'from-indigo-500 to-blue-500' },
-    { icon: Rocket, title: t.academy.title, description: t.academy.description, color: 'from-cyan-500 to-teal-500' },
-    { icon: Shield, title: t.offGrid.title, description: t.offGrid.description, color: 'from-green-500 to-emerald-500' },
-    { icon: Terminal, title: t.softwareDev.title, description: t.softwareDev.description, color: 'from-purple-500 to-violet-500' },
-  ];
+  const services = serviceOrder.map((s) => ({
+    ...s,
+    title: t[s.key].title,
+    description: t[s.key].description,
+  }));
 
   return (
     <div className="min-h-screen bg-[#020205] text-white">
@@ -92,21 +88,21 @@ export function ServicesPage() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="group relative h-full"
               >
-                <div className="relative h-full p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-[rgba(255,255,255,0.1)] backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300">
+                <Link to={`/services/${service.slug}`} className="relative h-full flex flex-col p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-[rgba(255,255,255,0.1)] backdrop-blur-sm hover:border-blue-500/30 transition-all duration-300">
                   <div className={`inline-flex p-4 rounded-xl bg-gradient-to-r ${service.color} mb-6`}>
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl mb-4 text-white font-light" style={{ fontFamily: 'Orbitron, sans-serif' }}>{service.title}</h3>
                   <p className="text-gray-400 mb-8 font-light" style={{ fontFamily: 'Inter, sans-serif' }}>{service.description}</p>
                   <div className="mt-auto">
-                    <button className="flex items-center gap-2 text-blue-400 group-hover:text-blue-300 transition-colors">
+                    <span className="flex items-center gap-2 text-blue-400 group-hover:text-blue-300 transition-colors">
                       <span className="text-sm font-light uppercase tracking-widest">{t.learnMore}</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </span>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+              </Link>
+            </motion.div>
+          ))}
           </div>
 
           {/* NetReachGo All-in-One Platform Section */}

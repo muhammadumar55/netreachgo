@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router';
 import { Layout } from '@/app/components/layout';
 import { HomePage } from '@/app/pages/home';
 import { ServicesPage } from '@/app/pages/services';
+import { ServiceDetailPage } from '@/app/pages/service-detail';
 import { AboutPage } from '@/app/pages/about';
 import { DiscoveryPage } from '@/app/pages/discovery';
 import { TeamPage } from '@/app/pages/team';
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: 'services',
         Component: ServicesPage,
+      },
+      {
+        path: 'services/:slug',
+        Component: ServiceDetailPage,
       },
       {
         path: 'about',

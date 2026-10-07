@@ -85,38 +85,116 @@ export const translations = {
       webDev: {
         title: 'Website Development & Design',
         description: 'With over 20 years of experience, we create lightning-fast, premium web applications built with cutting-edge technology and superior design aesthetics.',
+        slug: 'web-development',
+        pageSubtitle: 'For over 20 years we have designed and built lightning-fast, premium web applications that look incredible, load instantly, and convert visitors into customers.',
+        features: [
+          'Custom UI/UX design with premium aesthetics',
+          'Lightning-fast performance and mobile-first builds',
+          'SEO-ready architecture with analytics baked in',
+          'Ongoing maintenance, hosting, and support',
+        ],
+
       },
       aiAgents: {
         title: 'Custom A.I. Agents',
         description: 'Autonomous intelligent agents designed to handle specific business operations with human-like precision.',
+        slug: 'ai-agents',
+        pageSubtitle: 'Autonomous intelligent agents trained on your business that sell, support, market, and operate around the clock with human-like precision.',
+        features: [
+          '24/7 autonomous operation — never sleeps, never misses',
+          'Trained on your data, scripts, and business rules',
+          'Natural, human-like conversations across channels',
+          'Plugs into your CRM, calendar, email, and tools',
+        ],
+
       },
       automation: {
         title: 'Marketing Automation',
         description: 'AI-powered campaigns and workflows that convert and scale automatically across all channels.',
+        slug: 'marketing-automation',
+        pageSubtitle: 'AI-powered campaigns and workflows that capture, nurture, and convert leads automatically across every channel — set it once, and it scales.',
+        features: [
+          'Multi-channel campaigns: SMS, email, and social',
+          'Lead capture and nurture sequences on autopilot',
+          'Smart segmentation and follow-up timing',
+          'Conversion tracking with clear ROI reporting',
+        ],
+
       },
-      marketing: {
-        title: 'Digital Marketing Strategy',
-        description: 'Data-driven marketing strategies enhanced by AI for maximum ROI and market penetration.',
-      },
+
       consultancy: {
         title: 'AI Consultancy',
         description: 'Strategic guidance to integrate AI into your business operations and future-proof your tech stack.',
+        slug: 'ai-consultancy',
+        pageSubtitle: 'Strategic guidance to identify where AI creates the most value in your business — and a practical roadmap to get there without disruption.',
+        features: [
+          'AI readiness and opportunity audit',
+          'Vendor and tool selection guidance',
+          'ROI roadmap with prioritized quick wins',
+          'Change management and team adoption strategy',
+        ],
+
       },
       aiImplementation: {
         title: 'AI Implementation Services',
         description: 'Done-for-you AI adoption: we audit your workflows, then build, integrate, and deploy AI agents, automations, and AI-powered tools directly into your operations — with team training included.',
+        slug: 'ai-implementation',
+        pageSubtitle: 'The hands-on team that turns AI strategy into reality: we build, integrate, and deploy AI agents, automations, and systems directly into your operations.',
+        features: [
+          'Workflow audit and implementation roadmap',
+          'Build, integrate, and deploy AI systems into your stack',
+          'Team training with full documentation',
+          'Ongoing optimization and support as you scale',
+        ],
+
       },
       academy: {
         title: 'N.R.G. Academy',
         description: 'Professional AI education and certification programs for individuals and enterprise teams.',
+        slug: 'academy',
+        pageSubtitle: 'Professional AI education and certification programs that give individuals and enterprise teams real, hands-on skills with today’s leading tools.',
+        features: [
+          'Certification programs for individuals and teams',
+          'Hands-on projects with real AI tools',
+          'Live cohorts and self-paced learning options',
+          'Enterprise training tailored to your stack',
+        ],
+
       },
       offGrid: {
         title: 'Off Grid Consultation & Implementation',
         description: 'Reduce your digital footprint and reclaim privacy through intentional disconnection. Digital detoxing strategies, analog tools adoption, VPN implementation, and privacy-first solutions for enhanced mental health and security.',
+        slug: 'off-grid',
+        pageSubtitle: 'Reduce your digital footprint and reclaim your privacy with intentional disconnection — practical privacy-first strategies for security and mental health.',
+        features: [
+          'Digital footprint audit and reduction plan',
+          'Privacy-first tools and VPN implementation',
+          'Digital detox strategies for mental health',
+          'Analog tools adoption with expert guidance',
+        ],
+
       },
       softwareDev: {
         title: 'Software Development',
         description: 'Custom enterprise-grade software solutions built with modern architectures, scalable design, and cutting-edge technologies.',
+        slug: 'software-development',
+        pageSubtitle: 'Custom enterprise-grade software built with modern architectures and scalable design — from first sketch to deployment and beyond.',
+        features: [
+          'Custom applications tailored to your operations',
+          'Modern, scalable architectures and APIs',
+          'Systems integration with your existing tools',
+          'Full lifecycle support: design to maintenance',
+        ],
+
+      },
+      servicePage: {
+        badge: 'N.R.G. SERVICE',
+        backLabel: 'All Services',
+        featuresTitle: "What's Included",
+        ctaTitle: 'Ready to put this to work?',
+        ctaText: 'Tell us about your business and we will show you exactly what this service can do for you — no jargon, no pressure.',
+        ctaButton: 'Book a Free Consultation',
+        otherServices: 'Explore Our Other Services',
       },
       learnMore: 'Learn More',
     },
@@ -616,38 +694,116 @@ export const translations = {
       webDev: {
         title: 'Diseño y Desarrollo Web',
         description: 'Con más de 20 años de experiencia, creamos aplicaciones web premium y ultrarrápidas construidas con tecnología de vanguardia y una estética de diseño superior.',
+        slug: 'web-development',
+        pageSubtitle: 'Con más de 20 años de experiencia, diseñamos y construimos aplicaciones web premium y ultrarrápidas que se ven increíbles, cargan al instante y convierten visitantes en clientes.',
+        features: [
+          'Diseño UI/UX personalizado con estética premium',
+          'Rendimiento ultrarrápido y diseño móvil primero',
+          'Arquitectura lista para SEO con analítica integrada',
+          'Mantenimiento, hosting y soporte continuo',
+        ],
+
       },
       aiAgents: {
         title: 'Agentes de I.A. a Medida',
         description: 'Agentes inteligentes autónomos diseñados para manejar operaciones comerciales específicas con precisión humana.',
+        slug: 'ai-agents',
+        pageSubtitle: 'Agentes inteligentes autónomos entrenados con tu negocio que venden, atienden, hacen marketing y operan las 24 horas con precisión humana.',
+        features: [
+          'Operación autónoma 24/7 — nunca duerme, nunca falla',
+          'Entrenados con tus datos, guiones y reglas de negocio',
+          'Conversaciones naturales y humanas en todos los canales',
+          'Se conecta a tu CRM, calendario, correo y herramientas',
+        ],
+
       },
       automation: {
         title: 'Automatización de Marketing',
         description: 'Campañas y flujos de trabajo impulsados por IA que convierten y escalan automáticamente en todos los canales.',
+        slug: 'marketing-automation',
+        pageSubtitle: 'Campañas y flujos de trabajo impulsados por IA que capturan, nutren y convierten clientes potenciales automáticamente en todos los canales — configúralo una vez y escala.',
+        features: [
+          'Campañas multicanal: SMS, correo y redes sociales',
+          'Captura y nutrición de clientes potenciales en automático',
+          'Segmentación inteligente y tiempos de seguimiento',
+          'Seguimiento de conversiones con reportes de ROI claros',
+        ],
+
       },
-      marketing: {
-        title: 'Estrategia de Marketing Digital',
-        description: 'Estrategias de marketing basadas en datos potenciadas por IA para el máximo ROI y penetración de mercado.',
-      },
+
       consultancy: {
         title: 'Consultoría en IA',
         description: 'Guía estratégica para integrar IA en tus operaciones empresariales y asegurar el futuro de tu infraestructura tecnológica.',
+        slug: 'ai-consultancy',
+        pageSubtitle: 'Guía estratégica para identificar dónde genera la IA el mayor valor en tu negocio — y una hoja de ruta práctica para llegar sin interrupciones.',
+        features: [
+          'Auditoría de preparación y oportunidades de IA',
+          'Asesoría en selección de proveedores y herramientas',
+          'Hoja de ruta de ROI con victorias rápidas priorizadas',
+          'Gestión del cambio y estrategia de adopción del equipo',
+        ],
+
       },
       aiImplementation: {
         title: 'Implementación de IA',
         description: 'Adopción de IA llave en mano: auditamos tus flujos de trabajo y luego construimos, integramos y desplegamos agentes de IA, automatizaciones y herramientas directamente en tus operaciones — con capacitación para tu equipo incluida.',
+        slug: 'ai-implementation',
+        pageSubtitle: 'El equipo que convierte la estrategia de IA en realidad: construimos, integramos y desplegamos agentes, automatizaciones y sistemas de IA directamente en tus operaciones.',
+        features: [
+          'Auditoría de flujos de trabajo y hoja de ruta',
+          'Construcción, integración y despliegue de sistemas de IA',
+          'Capacitación de equipo con documentación completa',
+          'Optimización continua y soporte mientras escalas',
+        ],
+
       },
       academy: {
         title: 'Academia N.R.G.',
         description: 'Programas de educación y certificación profesional en IA para individuos y equipos corporativos.',
+        slug: 'academy',
+        pageSubtitle: 'Programas de educación y certificación profesional en IA que dan a individuos y equipos empresariales habilidades reales y prácticas con las herramientas líderes de hoy.',
+        features: [
+          'Programas de certificación para individuos y equipos',
+          'Proyectos prácticos con herramientas de IA reales',
+          'Cohortes en vivo y opciones a tu propio ritmo',
+          'Capacitación empresarial adaptada a tu infraestructura',
+        ],
+
       },
       offGrid: {
         title: 'Consultoría e Implementación Off Grid',
         description: 'Reduce tu huella digital y recupera tu privacidad mediante la desconexión intencional. Estrategias de desintoxicación digital, adopción de herramientas analógicas, implementación de VPN y soluciones centradas en la privacidad para mejor salud mental y seguridad.',
+        slug: 'off-grid',
+        pageSubtitle: 'Reduce tu huella digital y recupera tu privacidad mediante la desconexión intencional — estrategias prácticas centradas en la privacidad, la seguridad y la salud mental.',
+        features: [
+          'Auditoría y plan de reducción de huella digital',
+          'Herramientas centradas en la privacidad e implementación de VPN',
+          'Estrategias de desintoxicación digital para tu salud mental',
+          'Adopción de herramientas analógicas con guía experta',
+        ],
+
       },
       softwareDev: {
         title: 'Desarrollo de Software',
         description: 'Soluciones de software personalizadas de grado empresarial construidas con arquitecturas modernas, diseño escalable y tecnologías de vanguardia.',
+        slug: 'software-development',
+        pageSubtitle: 'Software personalizado de grado empresarial construido con arquitecturas modernas y diseño escalable — desde el primer boceto hasta el despliegue y más allá.',
+        features: [
+          'Aplicaciones personalizadas para tus operaciones',
+          'Arquitecturas y APIs modernas y escalables',
+          'Integración de sistemas con tus herramientas existentes',
+          'Soporte de ciclo completo: del diseño al mantenimiento',
+        ],
+
+      },
+      servicePage: {
+        badge: 'SERVICIO N.R.G.',
+        backLabel: 'Todos los Servicios',
+        featuresTitle: 'Qué Incluye',
+        ctaTitle: '¿Listo para ponerlo a trabajar?',
+        ctaText: 'Cuéntanos sobre tu negocio y te mostraremos exactamente lo que este servicio puede hacer por ti — sin tecnicismos, sin presión.',
+        ctaButton: 'Agenda una Consulta Gratis',
+        otherServices: 'Explora Nuestros Otros Servicios',
       },
       learnMore: 'Saber Más',
     },
