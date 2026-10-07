@@ -85,6 +85,27 @@ export function AIAgentsSection() {
           </p>
         </motion.div>
 
+        {/* Promo video */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="max-w-4xl mx-auto mb-14"
+        >
+          <div className="relative rounded-2xl overflow-hidden border border-blue-500/25 shadow-[0_0_60px_rgba(59,130,246,0.15)] bg-black">
+            <video
+              src="https://base44.app/api/apps/6a79d5c61a5acada4f1aacaf/files/mp/public/6a79d5c61a5acada4f1aacaf/24f6724fd_agents_promo.mp4"
+              controls
+              muted
+              loop
+              autoPlay
+              playsInline
+              preload="metadata"
+              className="w-full aspect-video bg-black"
+            />
+          </div>
+        </motion.div>
+
         {/* Stats strip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
