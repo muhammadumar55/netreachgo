@@ -13,6 +13,8 @@ export function AIAgentsSection() {
   const { language } = useLanguage();
   const t = translations[language].agents;
   const [openAgent, setOpenAgent] = useState<number | null>(null);
+  const [promoPlaying, setPromoPlaying] = useState(false);
+  const promoRef = useRef<HTMLVideoElement>(null);
 
   const agents = [
     { icon: MessageSquare, ...t.salesAgent, color: 'from-blue-500 to-cyan-500', glow: 'rgba(59,130,246,0.35)' },
@@ -94,15 +96,35 @@ export function AIAgentsSection() {
         >
           <div className="relative rounded-2xl overflow-hidden border border-blue-500/25 shadow-[0_0_60px_rgba(59,130,246,0.15)] bg-black">
             <video
-              src="https://base44.app/api/apps/6a79d5c61a5acada4f1aacaf/files/mp/public/6a79d5c61a5acada4f1aacaf/24f6724fd_agents_promo.mp4"
+              ref={promoRef}
+              src="https://base44.app/api/apps/6a79d5c61a5acada4f1aacaf/files/mp/public/6a79d5c61a5acada4f1aacaf/aae19b72a_agents_promo_vo.mp4"
               controls
-              muted
-              loop
-              autoPlay
               playsInline
               preload="metadata"
+              onPlay={() => setPromoPlaying(true)}
+              onPause={() => setPromoPlaying(false)}
               className="w-full aspect-video bg-black"
             />
+            <AnimatePresence>
+              {!promoPlaying && (
+                <motion.button
+                  type="button"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  onClick={() => promoRef.current?.play()}
+                  className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px] hover:bg-black/30 transition-colors group"
+                >
+                  <span className="relative flex h-20 w-20 md:h-24 md:w-24 items-center justify-center rounded-full border-2 border-blue-400/60 bg-black/70 shadow-[0_0_50px_rgba(59,130,246,0.6)] group-hover:scale-105 transition-transform">
+                    <span className="absolute inset-0 rounded-full animate-ping bg-blue-500/10"></span>
+                    <svg className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                </motion.button>
+              )}
+            </AnimatePresence>
           </div>
         </motion.div>
 
