@@ -102,6 +102,10 @@ export const translations = {
         title: 'AI Consultancy',
         description: 'Strategic guidance to integrate AI into your business operations and future-proof your tech stack.',
       },
+      aiImplementation: {
+        title: 'AI Implementation Services',
+        description: 'Done-for-you AI adoption: we audit your workflows, then build, integrate, and deploy AI agents, automations, and AI-powered tools directly into your operations — with team training included.',
+      },
       academy: {
         title: 'N.R.G. Academy',
         description: 'Professional AI education and certification programs for individuals and enterprise teams.',
@@ -608,6 +612,10 @@ export const translations = {
       consultancy: {
         title: 'Consultoría en IA',
         description: 'Guía estratégica para integrar IA en tus operaciones empresariales y asegurar el futuro de tu infraestructura tecnológica.',
+      },
+      aiImplementation: {
+        title: 'Implementación de IA',
+        description: 'Adopción de IA llave en mano: auditamos tus flujos de trabajo y luego construimos, integramos y desplegamos agentes de IA, automatizaciones y herramientas directamente en tus operaciones — con capacitación para tu equipo incluida.',
       },
       academy: {
         title: 'Academia N.R.G.',

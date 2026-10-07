@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Globe, Code2, Cpu, BarChart3, Rocket, MessageSquare, Zap, ArrowRight } from 'lucide-react';
+import { Globe, Code2, Cpu, BarChart3, Rocket, MessageSquare, Zap, ArrowRight, BrainCircuit } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 import { MatrixText } from '@/app/components/matrix-text';
@@ -18,6 +18,7 @@ export function ServicesSection() {
     { icon: Zap, title: t.automation.title, description: t.automation.description, color: 'from-blue-600 to-indigo-600' },
     { icon: BarChart3, title: t.marketing.title, description: t.marketing.description, color: 'from-cyan-400 to-blue-400' },
     { icon: MessageSquare, title: t.consultancy.title, description: t.consultancy.description, color: 'from-blue-400 to-cyan-400' },
+    { icon: BrainCircuit, title: t.aiImplementation.title, description: t.aiImplementation.description, color: 'from-indigo-500 to-blue-500' },
     { icon: Rocket, title: t.academy.title, description: t.academy.description, color: 'from-cyan-500 to-teal-500' },
   ];
 
