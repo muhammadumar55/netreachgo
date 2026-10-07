@@ -1,13 +1,17 @@
-import { motion } from 'motion/react';
-import { Sparkles, ArrowRight, Bot, Headphones } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Sparkles, ArrowRight, Bot, Headphones, Play, X } from 'lucide-react';
 import { useLanguage } from '@/app/context/language-context';
 import { translations } from '@/app/translations';
 import { Link } from 'react-router';
+import { useState } from 'react';
 import { MatrixRain } from '@/app/components/matrix-rain';
+
+const DEMO_VIDEO_URL = 'https://base44.app/api/apps/6a79d5c61a5acada4f1aacaf/files/mp/public/6a79d5c61a5acada4f1aacaf/3e71bb320_e03cb7f51_Demovideo.mp4';
 
 export function HeroSection() {
   const { language } = useLanguage();
   const t = translations[language].hero;
+  const [showDemo, setShowDemo] = useState(false);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
@@ -100,11 +104,18 @@ export function HeroSection() {
             </div>
           </Link>
 
-          <Link to="/discovery" className="group px-8 py-4 rounded-lg border-2 border-blue-500/30 bg-blue-500/5 backdrop-blur-sm transition-all hover:border-blue-500/60 hover:bg-blue-500/10 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] active:scale-95">
-            <span className="text-blue-300 group-hover:text-blue-200 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
-              {t.ctaSecondary}
-            </span>
-          </Link>
+          <button
+            type="button"
+            onClick={() => setShowDemo(true)}
+            className="group px-8 py-4 rounded-lg border-2 border-blue-500/30 bg-blue-500/5 backdrop-blur-sm transition-all hover:border-blue-500/60 hover:bg-blue-500/10 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] active:scale-95"
+          >
+            <div className="flex items-center gap-2">
+              <Play className="w-4 h-4 text-blue-300 group-hover:text-blue-200 transition-colors fill-current" />
+              <span className="text-blue-300 group-hover:text-blue-200 transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>
+                {t.ctaSecondary}
+              </span>
+            </div>
+          </button>
 
           <Link to="/support" className="group px-8 py-4 rounded-lg border-2 border-purple-500/30 bg-purple-500/5 backdrop-blur-sm transition-all hover:border-purple-500/60 hover:bg-purple-500/10 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] active:scale-95">
             <div className="flex items-center gap-2">
@@ -116,6 +127,45 @@ export function HeroSection() {
           </Link>
         </motion.div>
       </div>
+
+      {/* Demo Video Modal */}
+      <AnimatePresence>
+        {showDemo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+            onClick={() => setShowDemo(false)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="relative w-full max-w-4xl rounded-2xl overflow-hidden border border-blue-500/30 shadow-[0_0_80px_rgba(59,130,246,0.3)] bg-black"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setShowDemo(false)}
+                aria-label="Close"
+                className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/60 border border-white/10 text-white hover:bg-black/80 hover:text-blue-300 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <video
+                src={DEMO_VIDEO_URL}
+                controls
+                autoPlay
+                playsInline
+                className="w-full h-full aspect-video bg-black"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
