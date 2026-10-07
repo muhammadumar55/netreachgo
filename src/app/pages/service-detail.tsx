@@ -24,6 +24,21 @@ export function ServiceDetailPage() {
   const service = t[config.key];
   const Icon = config.icon;
 
+  // Split the title into white / yellow / blue spans like the rest of the site
+  const words = service.title.split(' ');
+  let whiteWords = words.slice(0, -2);
+  let yellowWords = words.slice(-2, -1);
+  let blueWords = words.slice(-1);
+  if (words.length === 2) {
+    whiteWords = words.slice(0, 1);
+    yellowWords = [];
+    blueWords = words.slice(1);
+  }
+  if (yellowWords[0] === '&') {
+    yellowWords = [words.slice(-3, -1).join(' ')];
+    whiteWords = words.slice(0, -3);
+  }
+
   return (
     <div className="min-h-screen bg-[#020205] text-white">
       <section ref={ref} className="relative py-32 overflow-hidden">
@@ -58,15 +73,39 @@ export function ServiceDetailPage() {
               <span className="text-sm text-blue-300 font-light uppercase tracking-widest">{p.badge}</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl mb-8" style={{ fontFamily: 'Orbitron, sans-serif', fontWeight: 430 }}>
-              <motion.span
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block text-white"
-              >
-                <MatrixText finalColor="text-white">{service.title}</MatrixText>
-              </motion.span>
+            <h1 className="text-5xl md:text-7xl mb-8 leading-snug" style={{ fontFamily: 'Orbitron, sans-serif', fontWeight: 430 }}>
+              {whiteWords.length > 0 && (
+                <motion.span
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  className="inline-block text-white"
+                >
+                  <MatrixText finalColor="text-white">{whiteWords.join(' ')}</MatrixText>
+                </motion.span>
+              )}{' '}
+              {yellowWords.length > 0 && (
+                <motion.span
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+                  className="inline-block text-yellow-400"
+                  style={{ textShadow: '0 0 30px rgba(251, 191, 36, 0.4)' }}
+                >
+                  <MatrixText delay={100} finalColor="text-yellow-400">{yellowWords.join(' ')}</MatrixText>
+                </motion.span>
+              )}{' '}
+              {blueWords.length > 0 && (
+                <motion.span
+                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+                  className="inline-block text-blue-400"
+                  style={{ textShadow: '0 0 30px rgba(59, 130, 246, 0.4)' }}
+                >
+                  <MatrixText delay={200} finalColor="text-blue-400">{blueWords.join(' ')}</MatrixText>
+                </motion.span>
+              )}
             </h1>
 
             <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
