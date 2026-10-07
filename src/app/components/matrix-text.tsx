@@ -39,6 +39,9 @@ export function MatrixText({ children, className = '', delay = 0, finalColor = '
 
   useEffect(() => {
     const chars = children.split('');
+    // Reset display so stale characters from a previous (longer) string
+    // don't linger when the language toggles to a shorter text.
+    setDisplayText(chars.map(() => ''));
     let completedCount = 0;
 
     const timeoutId = setTimeout(() => {
