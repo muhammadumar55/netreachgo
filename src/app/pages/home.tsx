@@ -3,6 +3,7 @@ import { FeaturedCard } from '@/app/components/featured-card';
 import { WebsitesSection } from '@/app/components/websites-section';
 import { TechStackSection } from '@/app/components/tech-stack-section';
 import { AIAgentsSection } from '@/app/components/ai-agents-section';
+import { AIImplementationSection } from '@/app/components/ai-implementation-section';
 import { TechShowcase } from '@/app/components/tech-showcase';
 import { AcademySection } from '@/app/components/academy-section';
 import { CTASection } from '@/app/components/cta-section';
@@ -17,6 +18,7 @@ export function HomePage() {
       <TrustedBySection />
       <FeaturedCard />
       <AIAgentsSection />
+      <AIImplementationSection />
       <ImageDividerSection />
       <WebsitesSection />
       <TechStackSection />

@@ -120,6 +120,26 @@ export const translations = {
       },
       learnMore: 'Learn More',
     },
+    aiImplementation: {
+      badge: 'DONE-FOR-YOU AI ADOPTION',
+      title: 'AI Implementation',
+      titleHighlight: 'for Your',
+      titleHighlight2: 'Business',
+      subtitle: 'Strategy is only half the answer. Our implementation team puts AI to work inside your business — building, integrating, and deploying the agents, automations, and AI-powered systems that move the needle, then training your team so the gains stick.',
+      step1: {
+        title: 'Audit & Strategy',
+        description: 'We map your workflows, find the highest-ROI opportunities for AI, and deliver a clear implementation roadmap.',
+      },
+      step2: {
+        title: 'Build, Integrate & Deploy',
+        description: 'We build and connect the right AI agents, automations, and tools directly into your existing systems — no rip and replace.',
+      },
+      step3: {
+        title: 'Train, Document & Scale',
+        description: 'We train your team, document everything, and keep optimizing as your business grows.',
+      },
+      cta: 'Explore Our Services',
+    },
     websites: {
       badge: 'PREMIUM WEB DESIGN',
       title: 'Elite Web',
@@ -630,6 +650,26 @@ export const translations = {
         description: 'Soluciones de software personalizadas de grado empresarial construidas con arquitecturas modernas, diseño escalable y tecnologías de vanguardia.',
       },
       learnMore: 'Saber Más',
+    },
+    aiImplementation: {
+      badge: 'ADOPCIÓN DE IA LLAVE EN MANO',
+      title: 'Implementación de IA',
+      titleHighlight: 'para tu',
+      titleHighlight2: 'Negocio',
+      subtitle: 'La estrategia es solo la mitad de la respuesta. Nuestro equipo de implementación pone la IA a trabajar dentro de tu negocio — construyendo, integrando y desplegando los agentes, automatizaciones y sistemas potenciados por IA que generan resultados, y luego capacitando a tu equipo para que los beneficios perduren.',
+      step1: {
+        title: 'Auditoría y Estrategia',
+        description: 'Mapeamos tus flujos de trabajo, identificamos las oportunidades de IA con mayor ROI y entregamos una hoja de ruta clara de implementación.',
+      },
+      step2: {
+        title: 'Construir, Integrar y Desplegar',
+        description: 'Construimos y conectamos los agentes de IA, automatizaciones y herramientas adecuadas directamente en tus sistemas existentes — sin reemplazar lo que ya funciona.',
+      },
+      step3: {
+        title: 'Capacitar, Documentar y Escalar',
+        description: 'Capacitamos a tu equipo, documentamos todo y seguimos optimizando a medida que tu negocio crece.',
+      },
+      cta: 'Explora Nuestros Servicios',
     },
     websites: {
       badge: 'DISEÑO WEB PREMIUM',
